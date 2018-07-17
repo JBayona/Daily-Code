@@ -47,6 +47,7 @@ function Node(val, left, right) {
 
 
 function countTreeNodes(tree) {
+  // La suma del 1 es por el root de ese nodo
   return tree ? countTreeNodes(tree.left) + countTreeNodes(tree.right) + 1 : 0;
 }
 
