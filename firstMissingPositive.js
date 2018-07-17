@@ -30,22 +30,21 @@ https://leetcode.com/problems/first-missing-positive/description/
 
 // Complejidad O(n) en tiempo y espacio O(1)
 var firstMissingPositive = function(array) {
-  let index = 0;
   let tam = 0;
   // Non-negative to the left
   for(let i = 0; i < array.length; i++) {
     if(array[i] > 0) {
       let tmp = array[i];
-      array[i] = array[index];
-      array[index++] = tmp;
-      tam++;
+      array[i] = array[tam];
+      array[tam++] = tmp;
     }
   }
 
-  /*Marcamos los visitados cambiándole el signo, restamos menos 1 porque el index empieza en 0 y los positivos empiezan de 1*/
-  /*Aquí lo importante es marcar el número, no importa el contenido del elemento, eso nos va ayudar a macar los visitados, sí el primer dígito ya está marcado significa que hay un 1 o un número pequeño después, entonces nos basamos en los indexes*/
+  /*Marcamos los visitados cambiándole el signo, restamos menos 1 porque el index empieza en 0 y los positivos empiezan en 1*/
+  /*Aquí lo importante es marcar el número, no importa el contenido del elemento, eso nos va ayudar a macar los visitados, 
+  sí el primer dígito ya está marcado significa que hay un 1 o un número pequeño después, entonces nos basamos en los indexes*/
   let size = array.length;
-  for(let i = 0; i < index; i++) {
+  for(let i = 0; i < tam; i++) {
     if(Math.abs(array[i]) - 1 < size && array[Math.abs(array[i]) - 1] > 0){
       array[Math.abs(array[i])-1] = - array[Math.abs(array[i])-1];
     }
@@ -53,14 +52,14 @@ var firstMissingPositive = function(array) {
 
   // Index es el tamaño de nuestro arreglo positivo
   /*Regresamos el index del primer positivo, eso indica que no fué marcado por lo tanto no hay un número en el arreglo*/
-  for(let i = 0; i < index; i++) {
+  for(let i = 0; i < tam; i++) {
     if(array[i] > 0) {
       //Se le suma 1 porque es 0-based pero para volver a dejar el resultado normal
       return i+1;
     }
   }
 
-  return index+1;
+  return tam+1;
 };
 
 
