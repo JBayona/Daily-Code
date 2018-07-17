@@ -58,7 +58,7 @@ var firstMissingPositive = function(array) {
       return i+1;
     }
   }
-
+  //Este caso cubre todos los elementos consecutivos, regresaría el siguiente
   return tam+1;
 };
 
