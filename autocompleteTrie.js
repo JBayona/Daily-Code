@@ -82,7 +82,6 @@ function suggestionsRec(node, currPrefix, result) {
 
 function findWords(query, result) {
   let current = trie.children;
-  let level = 0;
   for(let i = 0; i < query.length; i++) {
     // no string in the Trie has this prefix
     if(!(query[i] in current)) {
