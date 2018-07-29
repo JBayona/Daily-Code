@@ -77,7 +77,7 @@ function setInPlace(array) {
       count2++;
     }
   }
-  
+
   // Set 0's
   for(let i = 0; i < count0; i++) {
     result[tmp++] = 0;
@@ -91,6 +91,45 @@ function setInPlace(array) {
   // Set 2´s
   for(let i = 0; i < count2; i++) {
     result[tmp++] = 2;
+  }
+  
+  return result;
+}
+
+array = [0,1,0,2,0,1,0,1,2,2,1,0];
+console.log(setInPlace(array));
+
+function setInPlace(array) {
+  let result = [];
+  let count0 = 0;
+  let count1 = 0;
+  let count2 = 0;
+  
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === 0) {
+      count0++;
+    }
+    if(array[i] === 1) {
+      count1++;
+    }
+    if(array[i] === 2) {
+      count2++;
+    }
+  }
+  
+  // Set 0's
+  for(let i = 0; i < count0; i++) {
+    result[i] = 0;
+  }
+  
+  // Set 1´s
+  for(let i = count0; i < (count0 + count1); i++) {
+    result[i] = 1;
+  }
+  
+  // Set 2´s
+  for(let i = (count0 + count1); i < array.length; i++) {
+    result[i] = 2;
   }
   
   return result;
