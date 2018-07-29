@@ -58,3 +58,43 @@ function setInPlaceZeroes(array) {
 
 let array2 =  [1,0,2,1,0,0,2,0,1,1,0,1,2];
 console.log(setInPlaceZeroes(array2));
+
+function setInPlace(array) {
+  let result = [];
+  let count0 = 0;
+  let count1 = 0;
+  let count2 = 0;
+  let tmp = 0
+  
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === 0) {
+      count0++;
+    }
+    if(array[i] === 1) {
+      count1++;
+    }
+    if(array[i] === 2) {
+      count2++;
+    }
+  }
+  console.log(count0, count1,count2)
+  // Set 0's
+  for(let i = 0; i < count0; i++) {
+    result[tmp++] = 0;
+  }
+  
+  // Set 1´s
+  for(let i = 0; i < count1; i++) {
+    result[tmp++] = 1;
+  }
+  
+  // Set 2´s
+  for(let i = 0; i < count2; i++) {
+    result[tmp++] = 2;
+  }
+  
+  return result;
+}
+
+array = [0,1,0,2,0,1,0,1,2,2,1,0];
+console.log(setInPlace(array));
