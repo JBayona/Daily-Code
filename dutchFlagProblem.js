@@ -77,7 +77,7 @@ function setInPlace(array) {
       count2++;
     }
   }
-  console.log(count0, count1,count2)
+  
   // Set 0's
   for(let i = 0; i < count0; i++) {
     result[tmp++] = 0;
