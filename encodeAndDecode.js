@@ -1,4 +1,5 @@
 /*
+
 This problem was asked by Amazon.
 
 Run-length encoding is a fast and simple method of encoding strings.
