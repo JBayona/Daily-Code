@@ -1,4 +1,5 @@
 /*
+
 This problem was asked by Google.
 
 Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
@@ -11,6 +12,7 @@ Do this in constant space and in one pass.
 /*
 Given linked list: 1->2->3->4->5, and n = 2.
 After removing the second node from the end, the linked list becomes 1->2->3->5.
+
 */
 
 function ListNode(val, node){
